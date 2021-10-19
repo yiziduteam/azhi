@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>闰年判断器</title>
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+ 
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script><!--脚本-->
+		        years=$("#year").val();
+			
+		    function jud(){
+				1.//把用户输入的年份拿到
+				years=$("#year").val();
+				2.//把sal转换成数字
+				salnum = parseInt(years);
+				3.//开始通过算法计算是否为闰年
+				if((salnum%4==0 && salnum%100!=0)||(salnum%400==0)){
+		    $("#result").text("老铁没毛病哦，是闰年")
+		}
+	   else{
+	    	$("#result").text("老铁，不是闰年哦")
+	    }
+	 }</script>
+		
+	</head>
+	<body>
+		<div class="container text-center">
+		<h1>一字赌闰年判断器</h1>
+		<table class="table table-bordered">
+		<tr>
+			<td>年份</td>
+			<td colspan="3">
+				<input id="year" class="form-control" placeholder="请输入年份" type="text"/>
+			</td>
+			<td>
+				<button onclick="jud(years)" class="btn btn-danger btn-block">判断</button>
+			</td>
+		</tr>
+		<tr>
+		    <td>判断结果</td>
+		    <td colspan="4" id="result"></td>
+		</tr>
+		</table>
+		  开发者：一字赌团队2021
+		</div>
+	</body>
+</html>
